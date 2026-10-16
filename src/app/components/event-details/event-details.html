@@ -1,0 +1,122 @@
+<div class="details-page">
+  <div class="nav-breadcrumbs">
+    <a routerLink="/events" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Retour au catalogue des événements</span>
+    </a>
+  </div>
+
+  @if (event(); as ev) {
+    <article class="event-details-card">
+      <div class="event-hero">
+        <img [src]="ev.imageUrl" [alt]="ev.title" class="event-hero-image" />
+        <div class="hero-overlay">
+          <span class="category-tag">{{ ev.category | uppercase }}</span>
+          <h1 class="event-title">{{ ev.title }}</h1>
+        </div>
+      </div>
+
+      <div class="event-content">
+        <!-- Barre d'informations rapides -->
+        <div class="meta-strip">
+          <div class="meta-item">
+            <div class="meta-icon">📅</div>
+            <div>
+              <span class="meta-label">Date &amp; Heure</span>
+              <strong class="meta-value">{{ ev.date | date:'fullDate' }}</strong>
+            </div>
+          </div>
+
+          <div class="meta-item">
+            <div class="meta-icon">📍</div>
+            <div>
+              <span class="meta-label">Lieu</span>
+              <strong class="meta-value">{{ ev.place }}</strong>
+            </div>
+          </div>
+
+          <div class="meta-item">
+            <div class="meta-icon">🏷️</div>
+            <div>
+              <span class="meta-label">Tarif</span>
+              <strong class="meta-value" [class.free-price]="ev.price === 0">
+                @if (ev.price === 0) {
+                  Gratuit
+                } @else {
+                  {{ ev.price | currency:'EUR':'symbol':'1.2-2' }}
+                }
+              </strong>
+            </div>
+          </div>
+
+          <div class="meta-item">
+            <div class="meta-icon">👥</div>
+            <div>
+              <span class="meta-label">Capacité</span>
+              <strong class="meta-value">{{ ev.capacity || 50 }} places</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Description complète -->
+        <div class="description-section">
+          <h2>À propos de cet événement</h2>
+          <p class="description-text">{{ ev.description }}</p>
+
+          <div class="organizer-box">
+            <div class="organizer-avatar">🎓</div>
+            <div>
+              <span class="organizer-title">Organisé par</span>
+              <p class="organizer-name">{{ ev.organizer || 'EventHub Campus' }}</p>
+            </div>
+          </div>
+        </div>
+
+        @if (registerMessage) {
+          <div class="alert-success">
+            ✅ {{ registerMessage }}
+          </div>
+        }
+
+        <!-- Actions -->
+        <div class="actions-bar">
+          <button
+            type="button"
+            class="btn-fav"
+            [class.active]="isFavorite()"
+            (click)="onToggleFavorite()"
+          >
+            @if (isFavorite()) {
+              <span>★ Retirer des favoris</span>
+            } @else {
+              <span>☆ Ajouter aux favoris</span>
+            }
+          </button>
+
+          <button type="button" class="btn-register" (click)="onRegister()">
+            <span>S'inscrire à l'activité</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </article>
+  } @else {
+    <!-- Message lorsque l'identifiant n'existe pas (Exigence 11) -->
+    <div class="not-found-event">
+      <div class="not-found-icon">⚠️</div>
+      <h2 class="not-found-title">Événement introuvable</h2>
+      <p class="not-found-text">
+        Désolé, l'événement avec la référence demandée n'existe pas ou a été déplacé.
+      </p>
+      <a routerLink="/events" class="btn-primary">
+        Explorer le catalogue complet
+      </a>
+    </div>
+  }
+</div>
