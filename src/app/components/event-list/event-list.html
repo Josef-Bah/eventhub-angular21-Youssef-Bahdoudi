@@ -1,0 +1,106 @@
+<section class="events-page">
+  <!-- Hero banner -->
+  <div class="hero-banner">
+    <div class="hero-content">
+      <span class="hero-badge">🎓 Association Étudiante • Saison 2026-2027</span>
+      <h1 class="hero-title">Découvrez tous nos événements campus</h1>
+      <p class="hero-subtitle">
+        Ateliers techniques, conférences inspirantes, tournois sportifs et rencontres professionnelles.
+        Sélectionnez vos activités préférées et ajoutez-les à vos favoris en un clic !
+      </p>
+    </div>
+  </div>
+
+  <!-- Section de filtrage et barre d'outils -->
+  <div class="controls-container">
+    <div class="filters-row">
+      <!-- Filtres par catégorie avec Signals -->
+      <div class="category-filters" role="group" aria-label="Filtres par catégorie">
+        @for (cat of categories; track cat) {
+          <button
+            type="button"
+            class="filter-chip"
+            [class.active]="selectedCategory() === cat"
+            (click)="selectCategory(cat)"
+          >
+            {{ cat }}
+          </button>
+        }
+      </div>
+
+      <!-- Filtres secondaires : Gratuit & Recherche -->
+      <div class="extra-filters">
+        <button
+          type="button"
+          class="free-chip"
+          [class.active]="onlyFree()"
+          (click)="toggleFreeFilter()"
+          title="Afficher uniquement les événements gratuits"
+        >
+          <span>🏷️ Gratuit uniquement</span>
+        </button>
+
+        <div class="search-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="text"
+            placeholder="Rechercher par mot-clé..."
+            [value]="searchTerm()"
+            (input)="onSearchInput($event)"
+            aria-label="Rechercher un événement"
+          />
+          @if (searchTerm()) {
+            <button type="button" class="clear-search" (click)="searchTerm.set('')">✕</button>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Barre d'état / Signals stats -->
+    <div class="status-bar">
+      <span class="results-count">
+        <strong>{{ filteredEvents().length }}</strong> événement(s) trouvé(s)
+        @if (selectedCategory() !== 'Tous') {
+          dans la catégorie <em>"{{ selectedCategory() }}"</em>
+        }
+      </span>
+
+      <div class="stats-badge">
+        <span>⭐ Favoris sélectionnés : <strong>{{ favoritesCount() }}</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grille d'événements avec Control Flow @for et @empty -->
+  <div class="events-grid">
+    @for (event of filteredEvents(); track event.id) {
+      <app-event-card
+        [event]="event"
+        [isFavorite]="isFavorite(event.id)"
+        (toggleFavorite)="handleToggleFavorite($event)"
+      />
+    } @empty {
+      <!-- Exigence 5 : Afficher "Aucun événement disponible" lorsque la liste est vide -->
+      <div class="empty-state">
+        <div class="empty-icon">🔍</div>
+        <h3 class="empty-title">Aucun événement disponible</h3>
+        <p class="empty-description">
+          Aucun événement ne correspond à vos critères de recherche actuels.
+          Essayez d'élargir vos filtres ou de réinitialiser la recherche.
+        </p>
+        <button type="button" class="btn-reset" (click)="resetFilters()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+            <path d="M21 3v5h-5"></path>
+            <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+            <path d="M3 21v-5h5"></path>
+          </svg>
+          Réinitialiser tous les filtres
+        </button>
+      </div>
+    }
+  </div>
+</section>

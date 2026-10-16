@@ -1,0 +1,79 @@
+<div class="card" [class.active]="isFavorite()">
+  <div class="card-media">
+    <img [src]="event().imageUrl" [alt]="event().title" class="card-image" loading="lazy">
+    <span class="category-pill">{{ event().category | uppercase }}</span>
+    <button
+      type="button"
+      class="favorite-btn"
+      [class.active]="isFavorite()"
+      (click)="onToggleFavorite()"
+      [attr.aria-label]="isFavorite() ? 'Retirer des favoris' : 'Ajouter aux favoris'"
+      [title]="isFavorite() ? 'Retirer des favoris' : 'Ajouter aux favoris'"
+    >
+      @if (isFavorite()) {
+        <span class="star-icon active">★</span>
+      } @else {
+        <span class="star-icon">☆</span>
+      }
+    </button>
+  </div>
+
+  <div class="card-body">
+    <div class="meta-row">
+      <span class="date-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        {{ event().date | date:'EEE d MMM yyyy' }}
+      </span>
+
+      <span class="price-badge" [class.free]="event().price === 0">
+        @if (event().price === 0) {
+          Gratuit
+        } @else {
+          {{ event().price | currency:'EUR':'symbol':'1.2-2' }}
+        }
+      </span>
+    </div>
+
+    <h3 class="card-title">{{ event().title }}</h3>
+
+    <p class="card-place">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+      {{ event().place }}
+    </p>
+
+    <p class="card-description">
+      {{ event().description }}
+    </p>
+
+    <div class="card-footer">
+      <a [routerLink]="['/events', event().id]" class="details-link">
+        <span>Voir les détails</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <button
+        type="button"
+        class="toggle-action-btn"
+        [class.active]="isFavorite()"
+        (click)="onToggleFavorite()"
+      >
+        @if (isFavorite()) {
+          <span>★ En favoris</span>
+        } @else {
+          <span>☆ Favori</span>
+        }
+      </button>
+    </div>
+  </div>
+</div>

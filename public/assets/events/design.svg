@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="designGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#designGrad)"/>
+  <circle cx="680" cy="100" r="150" fill="#ffffff" fill-opacity="0.08"/>
+  <g transform="translate(100, 110)">
+    <rect width="160" height="160" rx="32" fill="#ffffff" fill-opacity="0.15"/>
+    <circle cx="80" cy="80" r="35" fill="#ffffff"/>
+    <circle cx="105" cy="80" r="18" fill="#10b981"/>
+  </g>
+  <g transform="translate(300, 130)">
+    <rect width="120" height="34" rx="17" fill="#ffffff" fill-opacity="0.2"/>
+    <text x="60" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2">ATELIER</text>
+    <text x="0" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#ffffff">UI/UX &amp; Figma</text>
+    <text x="0" y="120" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#ccfbf1">Design Systems • Prototypage • Ergonomie</text>
+  </g>
+  <g transform="translate(80, 420)">
+    <line x1="0" y1="0" x2="640" y2="0" stroke="#a7f3d0" stroke-opacity="0.3" stroke-width="2"/>
+    <text x="0" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" fill="#ecfdf5">Lab Média &amp; Design</text>
+    <text x="640" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#a7f3d0" text-anchor="end">5,00 €</text>
+  </g>
+</svg>

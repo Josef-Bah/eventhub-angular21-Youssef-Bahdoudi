@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="netGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="50%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#netGrad)"/>
+  <circle cx="650" cy="150" r="160" fill="#ffffff" fill-opacity="0.08"/>
+  <g transform="translate(100, 110)">
+    <rect width="160" height="160" rx="28" fill="#ffffff" fill-opacity="0.18"/>
+    <circle cx="55" cy="80" r="22" fill="#ffffff"/>
+    <circle cx="105" cy="80" r="22" fill="#ffffff"/>
+    <path d="M 35 125 C 35 105 75 105 75 125 Z" fill="#ffffff"/>
+    <path d="M 85 125 C 85 105 125 105 125 125 Z" fill="#ffffff"/>
+  </g>
+  <g transform="translate(300, 130)">
+    <rect width="140" height="34" rx="17" fill="#ffffff" fill-opacity="0.2"/>
+    <text x="70" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2">RENCONTRE</text>
+    <text x="0" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#ffffff">Rencontre Alumni</text>
+    <text x="0" y="120" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#fef3c7">Réseautage • Conseils Carrière • Cocktail</text>
+  </g>
+  <g transform="translate(80, 420)">
+    <line x1="0" y1="0" x2="640" y2="0" stroke="#fde68a" stroke-opacity="0.3" stroke-width="2"/>
+    <text x="0" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" fill="#fef3c7">Foyer Étudiant &amp; Terrasse</text>
+    <text x="640" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#fde68a" text-anchor="end">GRATUIT</text>
+  </g>
+</svg>

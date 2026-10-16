@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4c1d95"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#c026d3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#aiGrad)"/>
+  <circle cx="200" cy="150" r="160" fill="#ffffff" fill-opacity="0.06"/>
+  <circle cx="650" cy="350" r="180" fill="#ffffff" fill-opacity="0.05"/>
+  <g transform="translate(100, 110)">
+    <circle cx="90" cy="90" r="70" fill="#ffffff" fill-opacity="0.15"/>
+    <path d="M 60 90 Q 90 40 120 90 T 90 140 Z" fill="#fbcfe8"/>
+    <circle cx="90" cy="90" r="18" fill="#ffffff"/>
+  </g>
+  <g transform="translate(320, 130)">
+    <rect width="140" height="34" rx="17" fill="#ffffff" fill-opacity="0.2"/>
+    <text x="70" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="2">CONFÉRENCE</text>
+    <text x="0" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="800" fill="#ffffff">IA &amp; Futur du Web</text>
+    <text x="0" y="120" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#f5d0fe">LLMs • Agents Autonomes • Web 3.0</text>
+  </g>
+  <g transform="translate(80, 420)">
+    <line x1="0" y1="0" x2="640" y2="0" stroke="#fbcfe8" stroke-opacity="0.3" stroke-width="2"/>
+    <text x="0" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" fill="#f3e8ff">Amphithéâtre Turing</text>
+    <text x="640" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#f0abfc" text-anchor="end">GRATUIT</text>
+  </g>
+</svg>
