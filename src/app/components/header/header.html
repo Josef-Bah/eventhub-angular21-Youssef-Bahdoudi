@@ -1,0 +1,50 @@
+<header class="header">
+  <div class="header-container">
+    <a routerLink="/events" class="brand" title="EventHub - Accueil">
+      <div class="brand-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">Event<span class="accent">Hub</span></span>
+        <span class="brand-tag">Campus &amp; Vie Étudiante</span>
+      </div>
+    </a>
+
+    <nav class="nav-menu" aria-label="Navigation principale">
+      <ul class="nav-links">
+        <li>
+          <a routerLink="/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Catalogue</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/about" routerLinkActive="active">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span>À propos</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="favorites-badge" title="Nombre d'événements favoris">
+        <span class="fav-icon">⭐</span>
+        <span class="fav-label">Favoris :</span>
+        <span class="fav-count">{{ eventService.favoritesCount() }}</span>
+      </div>
+    </nav>
+  </div>
+</header>
