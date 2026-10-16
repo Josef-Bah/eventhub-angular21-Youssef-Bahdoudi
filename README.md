@@ -1,11 +1,11 @@
-# 📅 EventHub — Catalogue d’Événements Campus
+# EventHub — Catalogue d’Événements Campus
 
 > **Mini-projet IACC • Angular 21 (v22+) • Architecture Standalone & Signals**  
 > Application web monopage (SPA) client-side développée pour une association étudiante afin de présenter, filtrer et gérer les favoris des activités du campus (ateliers, conférences, compétitions, rencontres, tournois sportifs).
 
 ---
 
-## 🌟 1. Présentation du projet
+## 1. Présentation du projet
 
 **EventHub** est une application web moderne et responsive qui permet aux étudiants et visiteurs du campus de :
 - Consulter un catalogue d'activités riches et variées.
@@ -20,7 +20,7 @@ L'application fonctionne **exclusivement côté client** en TypeScript : aucune 
 
 ---
 
-## 🛠️ 2. Technologies & Versions utilisées
+## 2. Technologies & Versions utilisées
 
 | Technologie | Version | Rôle |
 |---|---|---|
@@ -32,7 +32,7 @@ L'application fonctionne **exclusivement côté client** en TypeScript : aucune 
 
 ---
 
-## 🚀 3. Instructions d'installation et de lancement
+## 3. Instructions d'installation et de lancement
 
 ### Prérequis
 Assurez-vous d'avoir **Node.js** (version 18 ou supérieure) et **npm** installés sur votre machine.
@@ -64,7 +64,7 @@ Les fichiers optimisés seront générés dans le dossier `dist/EventHub/`.
 
 ---
 
-## 🧩 4. Structure des composants et rôle de chacun
+## 4. Structure des composants et rôle de chacun
 
 L'application respecte rigoureusement l'architecture **Standalone Components** d'Angular :
 
@@ -98,7 +98,7 @@ src/app/
 
 ---
 
-## 💡 5. Fonctionnalités et notions techniques mobilisées
+## 5. Fonctionnalités et notions techniques mobilisées
 
 - **Angular Signals (`signal`, `computed`, `update`, `set`)** :
   - `events = signal<EventItem[]>(...)` : Signal stockant la collection d'événements.
@@ -125,7 +125,7 @@ src/app/
 
 ---
 
-## 📸 6. Captures d'écran de l'application
+## 6. Captures d'écran de l'application
 
 ### 1. Catalogue complet des événements et filtres réactifs
 ![Catalogue d'événements](/screenshots/01-catalogue.png)
@@ -144,32 +144,32 @@ src/app/
 
 ---
 
-## 📌 7. Commandes Git pour les 3 Checkpoints (Remise du projet)
+## 7. Commandes Git pour les 3 Checkpoints (Remise du projet)
 
 Conformément à la consigne :
 > *"Effectuer au minimum trois commits significatifs répartis pendant le travail (ex. initialisation, composants/Signals, routage/finalisation). Ne pas pousser node_modules/ , conserver le .gitignore généré"*
 
 Voici les commandes exactes à exécuter dans votre terminal pour valider les **3 Checkpoints** puis lier votre dépôt distant :
 
-### 🟢 Checkpoint 1 : Initialisation & structure des composants (Partie A)
+### Checkpoint 1 : Initialisation & structure des composants (Partie A)
 ```bash
 git add angular.json package.json tsconfig.json tsconfig.app.json .gitignore src/styles.css src/index.html src/app/models/ src/app/components/header/
 git commit -m "initialisation de la structure, styles globaux et composant header"
 ```
 
-### 🟡 Checkpoint 2 : Données, Signals, EventCard & EventList (Partie B)
+### Checkpoint 2 : Données, Signals, EventCard & EventList (Partie B)
 ```bash
 git add src/app/data/ src/app/services/ src/app/components/event-card/ src/app/components/event-list/ public/assets/
 git commit -m "gestion des evenements et favoris avec les signals, filtres et event-card"
 ```
 
-### 🔵 Checkpoint 3 : Routage, Lazy loading, Détails, 404 & README (Partie C & D)
+### Checkpoint 3 : Routage, Lazy loading, Détails, 404 & README (Partie C & D)
 ```bash
 git add src/app/app.routes.ts src/app/app.config.ts src/app/app.ts src/app/app.html src/app/app.css src/app/app.spec.ts src/app/components/event-details/ src/app/components/about/ src/app/components/not-found/ public/screenshots/ README.md
 git commit -m "routage, page details, lazy loading about, 404 et readme"
 ```
 
-### 🚀 Remise finale (Partie 5 : Publication sur votre dépôt GitHub)
+### Remise finale (Partie 5 : Publication sur votre dépôt GitHub)
 ```bash
 git branch -M main
 git remote add origin https://github.com/Josef-Bah/eventhub-angular21-Youssef-Bahdoudi.git
